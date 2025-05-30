@@ -1,5 +1,21 @@
+/*================Container borders===============*/
+$container: solid 1px blue;
 $card-border: solid 1px green;
+$search-bar: "border: 1px solid magenta";
+$card-wrapper: solid 1px red;
 
 .card {
   border: $card-border;
+}
+
+.container {
+  border: $container;
+}
+
+.search-bar {
+  border: $search-bar;
+}
+
+.card-wrapper {
+  border: $card-wrapper;
 }
