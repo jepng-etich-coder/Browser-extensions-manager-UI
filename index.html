@@ -3,6 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Main</title>
     <link
       rel="icon"
@@ -16,13 +23,17 @@
     <div class="container">
       <header class="search-bar">
         <img src="./Assets/images/logo.svg" alt="logo-icon" />
-        <img src="./Assets/images/icon-moon.svg" alt="moon-icon" />
-        <img src="./Assets/images/icon-sun.svg" alt="sun-icon" />
+        <img
+          src="./Assets/images/icon-moon.svg"
+          class="icon-moon"
+          alt="icon-moon"
+        />
+        <!-- <img src="./Assets/images/icon-sun.svg" alt="sun-icon" /> -->
       </header>
       <main>
-        <nav style="border: 1px solid magenta">
+        <nav>
           <h1>Extensions List</h1>
-          <div class="btns">
+          <div class="nav-btn">
             <button>All</button>
             <button>Active</button>
             <button>Inactive</button>
@@ -32,7 +43,7 @@
           <div class="card">
             <img src="./Assets/images/logo-devlens.svg" alt="logo-devlens" />
             <div class="card-text">
-              <h2>DevLens</h2>
+              <h3>DevLens</h3>
               <p>
                 Quickly inspect page layouts and visualize element boundaries.
               </p>
@@ -51,7 +62,7 @@
               alt="logo-style-spy"
             />
             <div class="card-text">
-              <h2>StyleSpy</h2>
+              <h3>StyleSpy</h3>
               <p>Instantly analyze and copy CSS from any webpage element</p>
             </div>
             <div class="card-actions">
@@ -68,7 +79,7 @@
               alt="logo-speed-boost"
             />
             <div class="card-text">
-              <h2>SpeedBoost</h2>
+              <h3>SpeedBoost</h3>
               <p>Optimizes browser resource usage to accelerate page loading</p>
             </div>
             <div class="card-actions">
@@ -85,7 +96,7 @@
               alt="logo-json-wizard."
             />
             <div class="card-text">
-              <h2>JSONWizard</h2>
+              <h3>JSONWizard</h3>
               <p>
                 Formats, validates, and prettifies JSON responses in-browser
               </p>
@@ -104,7 +115,7 @@
               alt="logo-tab-master-pro"
             />
             <div class="card-text">
-              <h2>TabMaster Pro</h2>
+              <h3>TabMaster Pro</h3>
               <p>Organizes browser tabs into groups and sessions.</p>
             </div>
             <div class="card-actions">
@@ -121,7 +132,7 @@
               alt="logo-viewport-buddy"
             />
             <div class="card-text">
-              <h2>ViewportBuddy</h2>
+              <h3>ViewportBuddy</h3>
               <p>
                 Simulates various screen resolutions directly within the
                 browser.
@@ -141,7 +152,7 @@
               alt="logo-markup-notes"
             />
             <div class="card-text">
-              <h2>Markup Notes</h2>
+              <h3>Markup Notes</h3>
               <p>
                 Enables annotation and notes directly onto webpages for
                 collaborative debugging.
@@ -161,7 +172,7 @@
               alt="logo-grid-guides"
             />
             <div class="card-text">
-              <h2>GridGuides</h2>
+              <h3>GridGuides</h3>
               <p>
                 Overlay customizable grids and alignment guides on any webpage.
               </p>
@@ -180,7 +191,7 @@
               alt="logo-palette-picker"
             />
             <div class="card-text">
-              <h2>Palette Picker</h2>
+              <h3>Palette Picker</h3>
               <p>Instantly extracts color palettes from any webpage.</p>
             </div>
             <div class="card-actions">
@@ -197,7 +208,7 @@
               alt="logo-link-checker"
             />
             <div class="card-text">
-              <h2>LinkChecker</h2>
+              <h3>LinkChecker</h3>
               <p>Scans and highlights broken links on any page.</p>
             </div>
             <div class="card-actions">
@@ -214,7 +225,7 @@
               alt="logo-dom-snapshot"
             />
             <div class="card-text">
-              <h2>Capture and export DOM structures quickly.</h2>
+              <h3>Capture and export DOM structures quickly.</h3>
               <p></p>
             </div>
             <div class="card-actions">
@@ -231,7 +242,7 @@
               alt="logo-console-plus."
             />
             <div class="card-text">
-              <h2>ConsolePlus</h2>
+              <h3>ConsolePlus</h3>
               <p>
                 Enhances developer console with advanced filtering and logging.
               </p>

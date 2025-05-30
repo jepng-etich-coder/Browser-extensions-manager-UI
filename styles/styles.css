@@ -3,14 +3,92 @@
   border: solid 1px green;
 }
 
+.card-wrapper {
+  border: solid 1px red;
+}
+
+/*================variables===============*/
+:root {
+  /*color palettes*/
+  --white: #ffff;
+  --neutral-900: hsl(227, 75%, 14%);
+  --neutral-800: hsl(226, 25%, 17%);
+  --neutral-700: hsl(225, 23%, 24%);
+  --neutral-600: hsl(226, 11%, 37%);
+  --neutral-300: hsl(0, 0%, 78%);
+  --neutral-200: hsl(217, 61%, 90%);
+  --neutral-100: hsl(0, 0%, 93%);
+  --red-400: hsl(3, 86%, 64%);
+  --red-500: hsl(3, 71%, 56%);
+  --red-700: hsl(3, 77%, 44%);
+  /*gradients*/
+  --light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+  /*typography*/
+  --font-family: "Noto Sans", sans-serif, arial, sans-serif;
+  --font-size-base: 1rem;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  /*spacing*/
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+}
+
+/*================global base resets===============*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: inherit;
+}
+
+h1,
+h3 {
+  color: var(--neutral-900);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+body {
+  background: var(--light-gradient);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--neutral-600);
+}
+
+/*================components===============*/
 .container {
-  border: solid 1px blue;
+  width: 60%;
+  margin: 0 auto;
 }
 
 .search-bar {
-  border: "border: 1px solid magenta";
+  background-color: var(--white);
+  border-radius: 1rem;
+  padding: 0.75rem;
+  margin: 2.5rem 0 4rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.search-bar .icon-moon {
+  border: 0px solid black;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--neutral-100);
 }
 
-.card-wrapper {
-  border: solid 1px red;
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }/*# sourceMappingURL=styles.css.map */
