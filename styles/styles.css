@@ -85,10 +85,23 @@ body {
   background-color: var(--neutral-100);
 }
 
-nav {
+main nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+}
+main .card-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+main .card-wrapper .card {
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 1rem;
+  padding: 0.5rem;
 }/*# sourceMappingURL=styles.css.map */
