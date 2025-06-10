@@ -101,22 +101,22 @@ body {
   border: none;
   border-radius: var(--border-radius-base);
   padding: var(--spacing-xxs) var(--spacing-xs);
-  font-size: 1rem;
+  font-size: var(--font-size-base);
   font-family: var(--font-family);
   color: var(--neutral-900);
 }
 .container main .card-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: auto;
   grid-gap: var(--spacing-xs);
   margin-bottom: var(--spacing-xl);
 }
 .container main .card-wrapper .card {
   max-width: 100%;
   max-height: 100%;
-  padding: 1rem;
-  border-radius: 0.6rem;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-base);
   background-color: var(--white);
   display: flex;
   flex-direction: column;
@@ -128,7 +128,8 @@ body {
 }
 .container main .card-wrapper .card .card-items {
   display: flex;
-  gap: 1rem;
+  gap: var(--spacing-md);
+  flex-grow: 1;
 }
 .container main .card-wrapper .card .card-items .card-img {
   height: 60px;
@@ -145,23 +146,22 @@ body {
 .container main .card-wrapper .card .card-actions .card-action-btn {
   background-color: var(--white);
   border: solid 0.1rem var(--neutral-300);
-  border-radius: 15px;
-  padding: 0.25rem 0.75rem;
-  margin-left: 0.25rem;
-  font-size: 0.8rem;
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xxs) var(--spacing-xs);
+  font-size: var(--font-size-sm);
   font-family: var(--font-family);
   color: var(--neutral-900);
 }
 .container main .card-wrapper .card .card-actions .toggleSwitch {
   position: relative;
   display: inline-block;
-  width: 40px;
-  height: 20px;
+  width: 30px;
+  height: 16px;
   cursor: pointer;
 }
 .container main .card-wrapper .card .card-actions .slider {
   background-color: var(--neutral-200);
-  border-radius: 20px;
+  border-radius: var(--border-radius-lg);
   display: block;
   width: 100%;
   height: 100%;
@@ -172,8 +172,8 @@ body {
   content: "";
   position: absolute;
   margin: 2px;
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   background-color: white;
   border-radius: 50%;
   transition: transform 0.3s ease;
