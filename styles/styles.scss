@@ -19,17 +19,25 @@
 
   /*typography*/
   --font-family: "Noto Sans", sans-serif, arial, sans-serif;
+  --font-size-sm: 0.8rem;
   --font-size-base: 1rem;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 
   /*spacing*/
-  --spacing-xs: 0.25rem;
+  --spacing-xxs: 0.25rem;
+  --spacing-xs: 0.75rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
+  --spacing-custom: 4rem;
+
+  /* border radius*/
+  --border-radius-sm: 0.5rem;
+  --border-radius-base: 1rem;
+  --border-radius-lg: 1.5rem;
 }
 
 $breakpoints: (
@@ -64,19 +72,15 @@ h3 {
   color: var(--neutral-900);
 }
 
-h1 {
-  font-size: 2rem;
-}
-
 p {
-  font-size: 1rem;
-  margin: 0.5rem 0 0.5rem 0;
-  text-align: left;
+  margin: var(--spacing-sm) 0 var(--spacing-xl) 0;
+  font-size: var(--font-size-sm);
 }
 
 body {
   height: 100vh;
-  background-image: var(--light-gradient);
+  height: 100%;
+  background: var(--light-gradient);
   font-family: var(--font-family);
   font-size: var(--font-size-base);
   color: var(--neutral-600);
@@ -85,36 +89,39 @@ body {
 /*================components===============*/
 
 .container {
-  width: 65%;
+  width: clamp(320px, 65%, 1200px);
   margin: 0 auto;
 
   header {
     .search-bar {
       background-color: var(--white);
-      border-radius: 1rem;
-      padding: 0.75rem;
-      margin: 2.5rem 0 4rem 0;
+      border-radius: var(--border-radius-base);
+      padding: var(--spacing-sm);
+      margin: var(--spacing-xl) 0 var(--spacing-custom) 0;
       display: flex;
       justify-content: space-between;
-      .dark-mode {
+      align-items: center;
+      .moon-dark-mode {
         border: 0px solid black;
-        border-radius: 0.5rem;
-        padding: 0.5rem;
+        border-radius: var(--border-radius-sm);
+        padding: var(--spacing-xs);
         background-color: var(--neutral-100);
+        margin-bottom: -0.3rem;
       }
     }
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px;
+      margin: var(--spacing-lg) 0;
       .nav-btns {
+        display: flex;
+        gap: var(--spacing-sm);
         .nav-btn {
           background-color: var(--white);
           border: none;
-          border-radius: 15px;
-          padding: 0.25rem 0.75rem;
-          margin-left: 0.25rem;
+          border-radius: var(--border-radius-base);
+          padding: var(--spacing-xxs) var(--spacing-xs);
           font-size: 1rem;
           font-family: var(--font-family);
           color: var(--neutral-900);
@@ -128,18 +135,22 @@ body {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(4, 1fr);
-      grid-gap: 0.8rem;
-      margin-bottom: 2.5rem;
+      grid-gap: var(--spacing-xs);
+      margin-bottom: var(--spacing-xl);
 
       .card {
-        width: 100%;
-        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
         padding: 1rem;
         border-radius: 0.6rem;
         background-color: var(--white);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        .card-items,
+        .card-actions {
+          flex: 0 0 auto;
+        }
 
         .card-items {
           .card-img {
