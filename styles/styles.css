@@ -1,7 +1,6 @@
 /*================VARIABLES===============*/
 :root {
   /*color palettes*/
-  --neutral-white: #ffff;
   --neutral-900: hsl(227, 75%, 14%);
   --neutral-800: hsl(226, 25%, 17%);
   --neutral-700: hsl(225, 23%, 24%);
@@ -9,6 +8,7 @@
   --neutral-300: hsl(0, 0%, 78%);
   --neutral-200: hsl(217, 61%, 90%);
   --neutral-100: hsl(0, 0%, 93%);
+  --neutral-0: hsl(200, 60%, 99%);
   --red-400: hsl(3, 86%, 64%);
   --red-500: hsl(3, 71%, 56%);
   --red-700: hsl(3, 77%, 44%);
@@ -69,50 +69,78 @@ body p {
   font-weight: var(--font-weight-medium);
   color: var(--neutral-600);
 }
+body .dark {
+  background: var(--dark-gradient);
+}
+body .dark h1,
+body .dark h3,
+body .dark p {
+  color: var(--neutral-0);
+}
+body .dark h1,
+body .dark h3 {
+  font-weight: var(--font-weight-bold);
+}
 
 /*================MAIN===============*/
 /*Base styles default mobile */
 @media (width <= 480px) {
   .container {
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg);
   }
   .container header .search-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: var(--spacing-xxs) var(--spacing-xs);
-    background-color: var(--neutral-white);
-    box-shadow: 0px 0px var(--spacing-sm) var(--neutral-300);
+    background-color: var(--neutral-0);
+    box-shadow: 0px 0px var(--spacing-xxs) var(--neutral-300);
     border-radius: var(--border-radius-sm);
   }
-  .container header .search-bar #moon-dark-mode {
+  .container header .search-bar .dark {
+    background-color: var(--neutral-700);
+    box-shadow: 0px 0px var(--spacing-xxs) var(--neutral-200);
+  }
+  .container header .search-bar .toggle-theme-switcher {
+    background-color: var(--neutral-100);
     border: none;
     border-radius: var(--border-radius-sm);
-    padding: var(--spacing-xs);
-    background-color: var(--neutral-100);
-    transition: background-color 0.3s ease;
-  }
-  .container header .search-bar #moon-dark-mode:hover {
-    background-color: var(--neutral-300);
+    --size: 40px;
+    display: block;
+    width: var(--size);
+    height: var(--size);
+    font-size: var(--size);
     cursor: pointer;
+    position: relative;
+    line-height: 1;
   }
-  .container header .search-bar #moon-dark-mode:focus {
-    border: 1px solid var(--red-400);
-    cursor: pointer;
+  .container header .search-bar .toggle-theme-switcher .dark {
+    background-color: var(--neutral-600);
   }
-  .container header .search-bar #sun-light-mode {
+  .container header .search-bar .toggle-theme-switcher input {
     display: none;
-    border: none;
-    border-radius: var(--border-radius-sm);
-    padding: var(--spacing-xs);
-    background-color: var(--neutral-100);
-    transition: background-color 0.3s ease;
   }
-  .container header .search-bar #sun-light-mode:hover {
+  .container header .search-bar .toggle-theme-switcher .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+  }
+  .container header .search-bar .toggle-theme-switcher #moon {
+    opacity: 0;
+  }
+  .container header .search-bar .toggle-theme-switcher input:checked ~ #moon {
+    opacity: 1;
+  }
+  .container header .search-bar .toggle-theme-switcher input:checked ~ #sun {
+    opacity: 0;
+  }
+  .container header .search-bar .toggle-theme-switcher:hover {
     background-color: var(--neutral-300);
     cursor: pointer;
   }
-  .container header .search-bar #sun-light-mode:focus {
+  .container header .search-bar .toggle-theme-switcher:focus {
     border: 1px solid var(--red-400);
     cursor: pointer;
   }
@@ -128,7 +156,7 @@ body p {
     gap: var(--spacing-sm);
   }
   .container header .nav-btns .nav-btn {
-    background-color: var(--neutral-white);
+    background-color: var(--neutral-0);
     border: none;
     box-shadow: 0px 0px var(--spacing-xxs) var(--neutral-300);
     border-radius: var(--border-radius-lg);
@@ -138,16 +166,20 @@ body p {
     color: var(--neutral-900);
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   }
+  .container header .nav-btns .nav-btn .dark {
+    background-color: var(--neutral-600);
+    box-shadow: 0px 0px var(--spacing-xxs) var(--neutral-200);
+  }
   .container header .nav-btns .nav-btn:hover {
     background-color: var(--red-500);
-    color: var(--neutral-white);
+    color: var(--neutral-0);
     cursor: pointer;
   }
   .container header .nav-btns .nav-btn:focus {
     background-color: var(--red-500);
-    color: var(--neutral-white);
+    color: var(--neutral-0);
     border: 1px solid var(--red-400);
-    outline: 2px solid white;
+    outline: 2px solid var(--neutral-0);
     outline-offset: -3px;
     cursor: pointer;
   }
@@ -157,19 +189,21 @@ body p {
     grid-gap: var(--spacing-md);
   }
   .container main .card-wrapper .card {
-    background-color: var(--neutral-white);
+    background-color: var(--neutral-0);
     padding: var(--spacing-md);
     border-radius: var(--border-radius-base);
     box-shadow: 0px 0px var(--spacing-xxs) var(--neutral-300);
   }
+  .container main .card-wrapper .card .dark {
+    background-color: var(--neutral-600);
+    box-shadow: 0px 0px var(--spacing-xxs) var(--neutral-200);
+  }
   .container main .card-wrapper .card .card-items {
-    border: 0px solid purple;
     display: flex;
     align-items: flex-start;
     gap: var(--spacing-lg);
   }
   .container main .card-wrapper .card .card-actions {
-    border: 0px solid red;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -178,7 +212,7 @@ body p {
     /* Change background + move circle */
   }
   .container main .card-wrapper .card .card-actions .card-action-btn {
-    background-color: var(--white);
+    background-color: var(--neutral-0);
     border: solid 0.1rem var(--neutral-300);
     border-radius: var(--border-radius-lg);
     padding: var(--spacing-xxs) var(--spacing-xs);
@@ -186,16 +220,20 @@ body p {
     font-family: var(--font-family);
     color: var(--neutral-900);
   }
+  .container main .card-wrapper .card .card-actions .card-action-btn .dark {
+    background-color: var(--neutral-600);
+    box-shadow: 0px 0px var(--spacing-xxs) var(--neutral-200);
+  }
   .container main .card-wrapper .card .card-actions .card-action-btn:hover {
     background-color: var(--red-500);
-    color: var(--neutral-white);
+    color: var(--neutral-0);
     cursor: pointer;
   }
   .container main .card-wrapper .card .card-actions .card-action-btn:focus {
     background-color: var(--red-500);
-    color: var(--neutral-white);
+    color: var(--neutral-0);
     border: 1px solid var(--red-400);
-    outline: 2px solid white;
+    outline: 2px solid var(--neutral-0);
     outline-offset: -3px;
     cursor: pointer;
   }
@@ -221,7 +259,7 @@ body p {
     margin: 1px;
     width: 15px;
     height: 14px;
-    background-color: white;
+    background-color: var(--neutral-0);
     border-radius: 50%;
     transition: transform 0.3s ease;
   }

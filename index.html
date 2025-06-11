@@ -29,16 +29,23 @@
             alt="logo-icon-with-word-extensions"
           />
           <div class="theme-switcher">
-            <button type="submit" id="moon-dark-mode">
-              <img src="./Assets/images/icon-moon.svg" alt="icon-moon" />
-            </button>
-            <button type="submit" id="sun-light-mode">
+            <label for="toggle" class="toggle-theme-switcher" tabindex="0">
+              <input type="checkbox" id="toggle" />
+
+              <img
+                src="./Assets/images/icon-moon.svg"
+                class="icon"
+                id="moon"
+                alt="icon-moon"
+              />
+
               <img
                 src="./Assets/images/icon-sun.svg"
-                class="sun-light-mode"
+                class="icon"
+                id="sun"
                 alt="sun-icon"
               />
-            </button>
+            </label>
           </div>
         </div>
 
@@ -69,8 +76,8 @@
               </div>
             </div>
             <div class="card-actions">
-              <button class="card-action-btn">Remove</button>
-              <label class="toggleSwitch">
+              <button type="submit" class="card-action-btn">Remove</button>
+              <label class="toggleSwitch" tabindex="0">
                 <input type="checkbox" />
                 <span class="slider"></span>
               </label>
@@ -317,7 +324,7 @@
             </div>
             <div class="card-actions">
               <button class="card-action-btn">Remove</button>
-              <label class="toggleSwitch">
+              <label class="toggleSwitch" tabindex="0">
                 <input type="checkbox" />
                 <span class="slider"></span>
               </label>
