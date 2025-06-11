@@ -23,23 +23,31 @@
     <div class="container">
       <header>
         <div class="search-bar">
-          <img src="./Assets/images/logo.svg" alt="logo-icon" />
+          <img
+            src="./Assets/images/logo.svg"
+            class="search-bar-logo"
+            alt="logo-icon-with-word-extensions"
+          />
           <div class="theme-switcher">
-            <img
-              src="./Assets/images/icon-moon.svg"
-              class="moon-dark-mode"
-              alt="icon-moon"
-            />
-            <!-- <img src="./Assets/images/icon-sun.svg" class="sun-light-mode" alt="sun-icon" /> -->
+            <button id="moon-dark-mode">
+              <img src="./Assets/images/icon-moon.svg" alt="icon-moon" />
+            </button>
+            <button id="sun-light-mode">
+              <img
+                src="./Assets/images/icon-sun.svg"
+                class="sun-light-mode"
+                alt="sun-icon"
+              />
+            </button>
           </div>
         </div>
 
         <nav>
           <h1>Extensions List</h1>
           <div class="nav-btns">
-            <button class="nav-btn">All</button>
-            <button class="nav-btn">Active</button>
-            <button class="nav-btn">Inactive</button>
+            <button class="nav-btn" id="nav-btn-all">All</button>
+            <button class="nav-btn" id="nav-btn-active">Active</button>
+            <button class="nav-btn" id="nav-btn-inactive">Inactive</button>
           </div>
         </nav>
       </header>
