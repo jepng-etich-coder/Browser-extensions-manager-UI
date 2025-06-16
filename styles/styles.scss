@@ -70,6 +70,9 @@
     box-sizing: inherit;
   }
 }
+.hidden {
+  display: none;
+}
 
 //typography
 #theme-switch {
@@ -80,8 +83,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all ease;
-  // transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
 }
 .icon:last-child {
   display: none;
@@ -194,7 +196,7 @@ body {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            .card-action-btn {
+            .remove-btn {
               background-color: var(--card-bg-color);
               border: none;
               box-shadow: 0px 0px var(--spacing-xxs) var(--border-shadow-color);
@@ -252,11 +254,11 @@ body {
             }
 
             /* Change background + move circle */
-            .toggleSwitch input:checked ~ .slider {
+            .toggleSwitch .toggle-switch:checked ~ .slider {
               background-color: var(--red-400);
             }
 
-            .toggleSwitch input:checked ~ .slider::before {
+            .toggleSwitch .toggle-switch:checked ~ .slider::before {
               transform: translateX(16px);
             }
           }

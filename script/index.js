@@ -1,25 +1,5 @@
-/*Pseudo code
-ON page load:
-    CHECK if a saved theme exists in local storage
-    IF a theme exists THEN
-        APPLY the saved theme (e.g., add/remove `dark´ class or attribute)
-    ELSE
-        SET default theme to light
-    END IF
-
-WHEN the user clicks the theme toggle switch:
-    IF the current theme is light THEN
-        SWITCH to dark theme
-        ADD `dark´ class or data attribute to the document
-        SAVE `dark´ theme in local storage
-    ELSE
-        SWITCH to light theme
-        REMOVE `dark´ class or data attribute from the document
-        SAVE `light´ theme in local storage
-
-*/
-let darkmode = localStorage.getItem("darkmode");
-
+/*Theme switching */
+let darkmode = localStorage.getItem("darkmode"); /*save to local storage*/
 const themeSwitch = document.querySelector("#theme-switch");
 
 const enableDarkmode = () => {
@@ -42,5 +22,59 @@ themeSwitch.addEventListener("click", () => {
   } else {
     disableDarkmode();
   }
-  //   darkmode !== "active" ? enableDarkmode : disableDarkmode;
+});
+
+/*Handle toggles to set active state */
+
+const toggles = document.querySelectorAll(".toggle-switch");
+toggles.forEach((toggle) => {
+  toggle.addEventListener("change", () => {
+    const card = toggle.closest(".card");
+    if (toggle.checked) {
+      card.classList.add("active");
+    } else {
+      card.classList.remove("active");
+    }
+  });
+});
+
+/*Handle filtering buttons */
+const activeBtn = document.querySelector("#nav-btn-active");
+const inactiveBtn = document.querySelector("#nav-btn-inactive");
+const allBtn = document.querySelector("#nav-btn-all");
+const cards = document.querySelectorAll(".card");
+
+activeBtn.addEventListener("click", () => {
+  cards.forEach((card) => {
+    if (card.classList.contains("active")) {
+      card.classList.remove("hidden");
+    } else {
+      card.classList.add("hidden");
+    }
+  });
+});
+
+inactiveBtn.addEventListener("click", () => {
+  cards.forEach((card) => {
+    if (!card.classList.contains("active")) {
+      card.classList.remove("hidden");
+    } else {
+      card.classList.add("hidden");
+    }
+  });
+});
+
+allBtn.addEventListener("click", () => {
+  cards.forEach((card) => {
+    card.classList.remove("hidden");
+  });
+});
+
+/*Handle removing card */
+const removeBtns = document.querySelectorAll(".remove-btn");
+removeBtns.forEach((removeBtn) => {
+  removeBtn.addEventListener("click", () => {
+    const card = removeBtn.closest(".card");
+    card.classList.add("hidden");
+  });
 });
